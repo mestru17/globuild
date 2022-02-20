@@ -27,7 +27,7 @@ dg.add_shared_library("libds.so", "llist.o", "vector.o")
 dg.build()
 ```
 
-You then just run `build.py` which is going to automatically find the sources corresponding to the `.o` files, generate a dependency graph and then build all missing or new files the same way that make would:
+You then just run `build.py` which is going to automatically find the sources corresponding to the `.o` files, generate a dependency graph and then build all missing or new files the same way that Make would:
 ```bash
 $ python3 build.py
 Created directory: obj/dbg/llist
@@ -61,7 +61,7 @@ Afterwards your libraries should have been compiled to the `bin` directory:
 └── build.py
 ```
 
-Running `build.py` again works like Make - i.e. nothing will happen because there has been no changes to any of the files in the dependency graph.
+Running `build.py` again works like Make - i.e. nothing will happen right now because there has been no changes to any of the files in the dependency graph.
 
 It is also possible to get a visualization of the dependency graph in the form of Graphviz source code by using `dg.print_graphviz()`:
 ```bash
@@ -81,4 +81,6 @@ digraph {
 }
 ```
 
-Using a Graphviz renderer, you would then be able to see: (PLACEHOLDER)
+Using a Graphviz renderer, you would then be able to see:
+
+![Dependency Graph](https://raw.githubusercontent.com/mestru17/globuild/master/example_dg.svg?token=GHSAT0AAAAAABRGFPXSXQBCO7A7NX4ZM6B2YQ3OTVQ)
