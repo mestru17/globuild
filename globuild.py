@@ -348,18 +348,3 @@ def run_command(command: str):
 def join_artifacts(*artifacts: Artifact) -> str:
     return " ".join((str(a) for a in artifacts))
 
-
-def main():
-    graph = DependencyGraph(Path())
-
-    graph.add_static_library("libcdatastructures.a", "vector.o", "llist.o")
-    graph.add_shared_library("libcdatastructures.so", "vector.o", "llist.o")
-    graph.add_executable("vectortest", "vector.o", "vectortest.c")
-    graph.add_executable("llisttest", "llist.o", "llisttest.c")
-
-    graph.print_graphviz()
-    graph.build()
-
-
-if __name__ == "__main__":
-    main()
