@@ -4,15 +4,15 @@ globuild is an easy and opinionated build automation tool for C projects. It use
 ## Example
 Let's say that you have are developing a C library containing implementations of common data structures and you're project structure is as follows:
 ```bash
- .
-├──  src
-│  ├──  llist
-│  │  ├──  llist.c
-│  │  └──  llist.h
-│  └──  vector
-│     ├──  vector.c
-│     └──  vector.h
-└──  build.py
+.
+├── src
+│  ├── llist
+│  │  ├── llist.c
+│  │  └── llist.h
+│  └── vector
+│     ├── vector.c
+│     └── vector.h
+└── build.py
 ```
 
 You want to build both a static and shared library containing the object code of `llist.c` and `vector.c`. In your `build.py` you put:
@@ -41,24 +41,24 @@ gcc -shared -Wall -o bin/libds.so obj/dbg/llist/llist.o obj/dbg/vector/vector.o
 
 Afterwards your libraries should have been compiled to the `bin` directory:
 ```bash
- .
-├──  bin
-│  ├──  libds.a
-│  └──  libds.so
-├──  obj
-│  └──  dbg
-│     ├──  llist
-│     │  └──  llist.o
-│     └──  vector
-│        └──  vector.o
-├──  src
-│  ├──  llist
-│  │  ├──  llist.c
-│  │  └──  llist.h
-│  └──  vector
-│     ├──  vector.c
-│     └──  vector.h
-└──  build.py
+.
+├── bin
+│  ├── libds.a
+│  └── libds.so
+├── obj
+│  └── dbg
+│     ├── llist
+│     │  └── llist.o
+│     └── vector
+│        └── vector.o
+├── src
+│  ├── llist
+│  │  ├── llist.c
+│  │  └── llist.h
+│  └── vector
+│     ├── vector.c
+│     └── vector.h
+└── build.py
 ```
 
 Running `build.py` again works like Make - i.e. nothing will happen because there has been no changes to any of the files in the dependency graph.
